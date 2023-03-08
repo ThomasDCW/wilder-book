@@ -1,4 +1,5 @@
 import blank_profile from "../assets/blank_profile.png";
+import Skill from "./Skill";
 
 export default function Wilder() {
   return (
@@ -13,25 +14,9 @@ export default function Wilder() {
       </p>
       <h4>Wild Skills</h4>
       <ul className="skills">
-        <li>
-          HTML
-          <span className="votes">3</span>
-        </li>
-        <li>
-          CSS
-          <span className="votes">3</span>
-        </li>
-        <li>
-          Typescript
-          <span className="votes">3</span>
-        </li>
-        <li>
-          React
-          <span className="votes">3</span>
-        </li>
-        <li>
-          Node <span className="votes">2</span>
-        </li>
+        <Skill />
+        <Skill />
+        <Skill />
       </ul>
     </article>
   );
