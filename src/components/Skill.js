@@ -1,8 +1,8 @@
-export default function Skill() {
+export default function Skill({ title, votes }) {
   return (
     <li>
-      HTML
-      <span className="votes">3</span>
+      {title}
+      <span className="votes">{votes}</span>
     </li>
   );
 }
