@@ -6,7 +6,7 @@ export default function AddWilder() {
   const [city, setCity] = useState("");
   return (
     <form
-      className="addWilder"
+      className="form"
       onSubmit={(e) => {
         axios.post("http://localhost:8000/api/wilder", {
           name: name,

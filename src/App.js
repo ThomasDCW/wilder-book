@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
+import AddSkill from "./components/AddSkill";
 import AddWilder from "./components/AddWilder";
 import Wilder from "./components/Wilder";
 
@@ -26,6 +27,7 @@ function App() {
       <main className="container">
         <h2>Wilders</h2>
         <AddWilder />
+        <AddSkill names={wilders} />
         <section className="card-row">
           {wilders?.map((wilderData, key) => {
             return (
