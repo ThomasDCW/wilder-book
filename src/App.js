@@ -34,6 +34,7 @@ function App() {
                 wilderId={wilderData.id}
                 name={wilderData.name}
                 skills={wilderData.skills}
+                city={wilderData.city}
               />
             );
           })}
