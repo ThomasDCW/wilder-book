@@ -10,12 +10,12 @@ export default function AddSkill({ names }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const wilders = await axios.get("http://localhost:8000/api/skill");
-      setSKills(wilders.data);
+      const wildersSkill = await axios.get("http://localhost:8000/api/skill");
+      setSKills(wildersSkill.data);
       console.log(skills.data);
     };
     fetchData();
-  }, []);
+  }, [skills]);
   console.log(skills);
   return (
     <div>
