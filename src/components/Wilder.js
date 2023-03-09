@@ -1,7 +1,8 @@
 import blank_profile from "../assets/blank_profile.png";
 import Skill from "./Skill";
+import axios from "axios";
 
-export default function Wilder({ name, votes, skills }) {
+export default function Wilder({ name, wilderId, skills }) {
   return (
     <article className="card">
       <img src={blank_profile} alt="Jane Doe Profile" />
@@ -18,6 +19,13 @@ export default function Wilder({ name, votes, skills }) {
           return <Skill key={key} title={skill.name} votes={skill.votes} />;
         })}
       </ul>
+      <form
+        onSubmit={(e) => {
+          axios.delete(`http://localhost:8000/api/wilder/${wilderId}`);
+        }}
+      >
+        <button type="submit">Delete</button>
+      </form>
     </article>
   );
 }

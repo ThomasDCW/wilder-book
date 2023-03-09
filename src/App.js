@@ -11,6 +11,7 @@ function App() {
     const fetchData = async () => {
       const wilders = await axios.get("http://localhost:8000/api/wilder");
       setWilders(wilders.data);
+      console.log(wilders.data);
     };
     fetchData();
   }, []);
@@ -30,6 +31,7 @@ function App() {
             return (
               <Wilder
                 key={key}
+                wilderId={wilderData.id}
                 name={wilderData.name}
                 skills={wilderData.skills}
               />
