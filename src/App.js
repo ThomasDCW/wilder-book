@@ -12,7 +12,6 @@ function App() {
     const fetchData = async () => {
       const wilders = await axios.get("http://localhost:8000/api/wilder");
       setWilders(wilders.data);
-      console.log(wilders.data);
     };
     fetchData();
   }, []);

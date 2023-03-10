@@ -12,11 +12,9 @@ export default function AddSkill({ names }) {
     const fetchData = async () => {
       const wildersSkill = await axios.get("http://localhost:8000/api/skill");
       setSKills(wildersSkill.data);
-      console.log(skills.data);
     };
     fetchData();
-  }, [skills]);
-  console.log(skills);
+  }, [skills.data]);
   return (
     <div>
       <form
@@ -29,14 +27,16 @@ export default function AddSkill({ names }) {
           });
         }}
       >
-        <label>Choose a wilder:</label>
+        <label>Select a wilder:</label>
         <select name="pets" onChange={(e) => setWilder(e.target.value)}>
+          <option value="">--Select a wilder--</option>
           {names.map((name, key) => (
             <option key={key}>{name.name}</option>
           ))}
         </select>
-        <label>Type a Skill :</label>
+        <label>Select a Skill :</label>
         <select name="pets" onChange={(e) => setSkill(e.target.value)}>
+          <option value="">--Select a Skill--</option>
           {skills.map((skill, key) => (
             <option key={key}>{skill.name}</option>
           ))}
